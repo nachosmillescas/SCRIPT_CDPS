@@ -6,8 +6,10 @@ from os import close
 import sys
 from subprocess import call
 
-	
-os.environ['GROUP_NUMBER']="Equipo 33"
+env_var = "GROUP_NUMBER"
+env_val = "Equipo 33"
+os.system("SETX {0} {1} /M".format(env_var,env_val))	
+#os.environ['GROUP_NUMBER']="Equipo 33"
 call(["sudo", "rm", "-r", "CDPS_P2"] )
 call(["git", "clone", "https://github.com/nachosmillescas/CDPS_P2"] )
 call(["sudo", "apt-get", "install", "python"] )
