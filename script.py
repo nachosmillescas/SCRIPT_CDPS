@@ -7,7 +7,7 @@ import sys
 from subprocess import call
 
 	
-call(["export", "GROUP_NUMBER=33"])
+os.system("export GROUP_NUMBER=33")
 call(["sudo", "rm", "-r", "CDPS_P2"] )
 call(["git", "clone", "https://github.com/nachosmillescas/CDPS_P2"] )
 call(["sudo", "apt-get", "install", "python"] )
