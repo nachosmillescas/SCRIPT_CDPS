@@ -15,5 +15,5 @@ call(["sudo", "apt-get", "update"] )
 call(["sudo", "apt-get", "install", "python3-pip"] )
 os.system("cd CDPS_P2/bookinfo/src/productpage")
 os.system("pip3 install -r requirements.txt")
-call(["python3", "productpage_monolith.py", "9080"])
+os.system("python3 productpage_monolith.py 9080")
 
