@@ -13,7 +13,7 @@ call(["git", "clone", "https://github.com/nachosmillescas/CDPS_P2"] )
 call(["sudo", "apt-get", "install", "python"] )
 call(["sudo", "apt-get", "update"] )
 call(["sudo", "apt-get", "install", "python3-pip"] )
-call(["cd", "CDPS_P2/bookinfo/src/productpage/"])
+os.system("cd CDPS_P2/bookinfo/src/productpage/")
 call(["pip3", "install", "-r", "requirements.txt"] )
 call(["python3", "productpage_monolith.py", "9080"])
 
