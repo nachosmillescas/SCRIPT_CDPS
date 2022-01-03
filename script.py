@@ -13,7 +13,7 @@ def modifHTML():
   #blockTitle = "\\{% block title \\%}"
   #endBlock = "\\{% endblock \\%}"
   for line in h:
-    if "block title" in line:
+    if ("{} block title {}Simple Bookstore App{} endblock {}".format('{%', '%}', '{%', '%}')) in line:
      aux.write("{} block title {} {} {} endblock {}".format('{%', '%}', os.environ.get('GROUP_NUMBER'), '{%', '%}'))
     else:
       aux.write(line)
