@@ -7,7 +7,7 @@ import sys
 from subprocess import call
 
 def modifHTML():
-  h=open("practica_creativa2/bookinfo/src/productpage/templates/productpage.html", "r")
+  h=open("practica_creativa2/bookinfo/src/productpage/templates/productpage.html", "r+")
   aux=open("practica_creativa2/bookinfo/src/productpage/templates/auxiliar.html", "w+")
   #formato=4#os.environ.get('GROUP_NUMBER')
   #blockTitle = "\\{% block title \\%}"
