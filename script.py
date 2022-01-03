@@ -7,8 +7,8 @@ import sys
 from subprocess import call
 
 def modifHTML():
-  h=open("CDPS_P2/bookinfo/src/productpage/templates/productpage.html", "r")
-  aux=open("CDPS_P2/bookinfo/src/productpage/templates/auxiliar.html", "w+")
+  h=open("practica_creativa2/bookinfo/src/productpage/templates/productpage.html", "r")
+  aux=open("practica_creativa2/bookinfo/src/productpage/templates/auxiliar.html", "w+")
   for line in h:
     if "{% block title %}Simple Bookstore App{% endblock %}" in line:
      aux.write("{% block title %}{}{% endblock %}".format(os.environ.get('GROUP_NUMBER')))
@@ -29,9 +29,9 @@ def funcion():
   call(["sudo", "apt-get", "install", "python"] )
   call(["sudo", "apt-get", "update"] )
   call(["sudo", "apt-get", "install", "python3-pip"] )
-  os.system("pip3 install -r CDPS_P2/bookinfo/src/productpage/requirements.txt")
+  os.system("pip3 install -r practica_creativa2/bookinfo/src/productpage/requirements.txt")
   modifHTML()
-  os.system("python3 CDPS_P2/bookinfo/src/productpage/productpage_monolith.py 9080")
+  os.system("python3 practica_creativa2/bookinfo/src/productpage/productpage_monolith.py 9080")
 
 funcion()
 
