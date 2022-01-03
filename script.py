@@ -10,7 +10,7 @@ def modifHTML():
   h=open("practica_creativa2/bookinfo/src/productpage/templates/productpage.html", "r")
   aux=open("practica_creativa2/bookinfo/src/productpage/templates/auxiliar.html", "w+")
   for line in h:
-    if "{% block title %}Simple Bookstore App{% endblock %}" in line:
+    if "block title" in line:
      aux.write("{% block title %}{}{% endblock %}".format(os.environ.get('GROUP_NUMBER')))
     else:
       aux.write(line)
