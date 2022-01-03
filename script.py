@@ -18,7 +18,9 @@ def modifHTML():
      aux.write("{} block title {} {} {} endblock {}".format('{%', '%}', os.environ.get('GROUP_NUMBER'), '{%', '%}'))
     else:
       aux.write(line)
+      print("Estamos modificando las lineas de auxiliar")
   for line in aux:
+    print("lo moveemos al fichero correcto") 
     h.write(line)
   h.close()
   aux.close()
