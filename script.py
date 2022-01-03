@@ -9,9 +9,6 @@ from subprocess import call
 def modifHTML():
   h=open("practica_creativa2/bookinfo/src/productpage/templates/productpage.html", "r+")
   aux=open("practica_creativa2/bookinfo/src/productpage/templates/auxiliar.html", "w+")
-  #formato=4#os.environ.get('GROUP_NUMBER')
-  #blockTitle = "\\{% block title \\%}"
-  #endBlock = "\\{% endblock \\%}"
   for line in h:
     if ("{} block title {}Simple Bookstore App{} endblock {}".format('{%', '%}', '{%', '%}')) in line:
       print("Hay una linea que es igual a la elegida")
@@ -23,13 +20,11 @@ def modifHTML():
   h=open("practica_creativa2/bookinfo/src/productpage/templates/productpage.html", "w+")
   aux=open("practica_creativa2/bookinfo/src/productpage/templates/auxiliar.html", "r")
   for line in aux:
-    print("lo moveemos al fichero correcto") 
     h.write(line)
+
+#------------------------------------------------------MAIN---------------------------------------------------
 def funcion(): 
-  
-  #set GROUP_NUMBER="Equipo 33" 
-  #os.system( """export GROUP_NUMBER="33"""")
-  os.environ['GROUP_NUMBER']="33"
+  os.environ['GROUP_NUMBER']="Equipo 33"
   os.system("printenv GROUP_NUMBER")
   call(["sudo", "rm", "-r", "CDPS_P2"] )
   call(["git", "clone", "https://github.com/CDPS-ETSIT/practica_creativa2.git"] )
