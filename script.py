@@ -14,6 +14,7 @@ def modifHTML():
   #endBlock = "\\{% endblock \\%}"
   for line in h:
     if ("{} block title {}Simple Bookstore App{} endblock {}".format('{%', '%}', '{%', '%}')) in line:
+      print("Hay una linea que es igual a la elegida")
      aux.write("{} block title {} {} {} endblock {}".format('{%', '%}', os.environ.get('GROUP_NUMBER'), '{%', '%}'))
     else:
       aux.write(line)
