@@ -9,12 +9,12 @@ from subprocess import call
 def modifHTML():
   h=open("practica_creativa2/bookinfo/src/productpage/templates/productpage.html", "r")
   aux=open("practica_creativa2/bookinfo/src/productpage/templates/auxiliar.html", "w+")
-  formato=4#os.environ.get('GROUP_NUMBER')
-  blockTitle = "{% block title %}"
-  endBlock = "{% endblock %}"
+  #formato=4#os.environ.get('GROUP_NUMBER')
+  #blockTitle = "\\{% block title \\%}"
+  #endBlock = "\\{% endblock \\%}"
   for line in h:
     if "block title" in line:
-     aux.write(blockTitle + "{}".format(formato) + endBlock)
+     aux.write("{} block title {} {} {} endblock {}".format('{%', '%}', os.environ.get('GROUP_NUMBER'), '{%', '%}'))
     else:
       aux.write(line)
   for line in aux:
@@ -37,4 +37,3 @@ def funcion():
   os.system("python3 practica_creativa2/bookinfo/src/productpage/productpage_monolith.py 9080")
 
 funcion()
-
