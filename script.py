@@ -6,7 +6,18 @@ from os import close
 import sys
 from subprocess import call
 
-
+def modifHTML():
+  h=open("CDPS_P2/bookinfo/src/productpage/templates/productpage.html", "r")
+  aux=open("CDPS_P2/bookinfo/src/productpage/templates/auxiliar.html", "w+")
+  for line in h:
+    if "{% block title %}Simple Bookstore App{% endblock %}" in line:
+     aux.write("{% block title %}{}{% endblock %}".format(os.environ.get('GROUP_NUMBER')))
+    else:
+      aux.write(line)
+  for line in aux:
+    h.write(line)
+  h.close()
+  aux.close()
 def funcion(): 
   
   #set GROUP_NUMBER="Equipo 33" 
@@ -23,15 +34,4 @@ def funcion():
   os.system("python3 CDPS_P2/bookinfo/src/productpage/productpage_monolith.py 9080")
 
 funcion()
-def modifHTML():
-  h=open("CDPS_P2/bookinfo/src/productpage/templates/productpage.html", "r")
-  aux=open("CDPS_P2/bookinfo/src/productpage/templates/auxiliar.html", "w+")
-  for line in h:
-    if "{% block title %}Simple Bookstore App{% endblock %}" in line:
-     aux.write("{% block title %}{}{% endblock %}".format(os.environ.get('GROUP_NUMBER')))
-    else:
-      aux.write(line)
-  for line in aux:
-    h.write(line)
-  h.close()
-  aux.close()
+
