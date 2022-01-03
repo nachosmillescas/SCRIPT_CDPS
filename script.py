@@ -14,7 +14,7 @@ def modifHTML():
   endBlock = "{% endblock %}"
   for line in h:
     if "block title" in line:
-     aux.write(blockTitle + "{}".format(formato) + endBlock "\n")
+     aux.write(blockTitle + "{}".format(formato) + endBlock)
     else:
       aux.write(line)
   for line in aux:
