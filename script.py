@@ -9,9 +9,9 @@ from subprocess import call
 
 def funcion(): 
   
-  set GROUP_NUMBER="Equipo 33" 
-  os.system( """export GROUP_NUMBER="33"""")
-  #os.environ['GROUP_NUMBER']='Equipo 33'
+  #set GROUP_NUMBER="Equipo 33" 
+  #os.system( """export GROUP_NUMBER="33"""")
+  os.environ['GROUP_NUMBER']="33"
   #call(["sudo", "rm", "-r", "CDPS_P2"] )
   #call(["git", "clone", "https://github.com/nachosmillescas/CDPS_P2"] )
   #call(["sudo", "apt-get", "install", "python"] )
