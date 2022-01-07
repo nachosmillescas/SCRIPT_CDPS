@@ -28,7 +28,7 @@ def modifHTML():
 
 #------------------------------------------------------MAIN---------------------------------------------------
 def funcion(): 
-  #os.environ['GROUP_NUMBER']="Equipo 33"
+  os.environ['GROUP_NUMBER']=33
   os.system("printenv GROUP_NUMBER")
   call(["sudo", "rm", "-r", "CDPS_P2"] )
   call(["git", "clone", "https://github.com/CDPS-ETSIT/practica_creativa2.git"] )
