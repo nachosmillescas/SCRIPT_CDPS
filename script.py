@@ -7,23 +7,23 @@ import sys
 from subprocess import call
 
 def modifHTML():
-  if os.environ.get('GROUP_NUMBER')== None:
-    return
-  else:
-    h=open("practica_creativa2/bookinfo/src/productpage/templates/productpage.html", "r+")
-    aux=open("practica_creativa2/bookinfo/src/productpage/templates/auxiliar.html", "w+")
-    for line in h:
-      if ("{} block title {}Simple Bookstore App{} endblock {}".format('{%', '%}', '{%', '%}')) in line:
-        print("Hay una linea que es igual a la elegida")
-        aux.write("{} block title {} {} {} endblock {}".format('{%', '%}', os.environ.get('GROUP_NUMBER'), '{%', '%}'))
-      else:
-        aux.write(line)
-    h.close()
-    aux.close()
-    h=open("practica_creativa2/bookinfo/src/productpage/templates/productpage.html", "w+")
-    aux=open("practica_creativa2/bookinfo/src/productpage/templates/auxiliar.html", "r")
-    for line in aux:
-      h.write(line)
+  #if os.environ.get('GROUP_NUMBER')== None:
+    #return
+  #else:
+  h=open("practica_creativa2/bookinfo/src/productpage/templates/productpage.html", "r+")
+  aux=open("practica_creativa2/bookinfo/src/productpage/templates/auxiliar.html", "w+")
+  for line in h:
+    if ("{} block title {}Simple Bookstore App{} endblock {}".format('{%', '%}', '{%', '%}')) in line:
+      print("Hay una linea que es igual a la elegida")
+      aux.write("{} block title {} Simple Bookstore App {} {} endblock {}".format('{%', '%}', os.environ.get('GROUP_NUMBER'), '{%', '%}'))
+    else:
+      aux.write(line)
+  h.close()
+  aux.close()
+  h=open("practica_creativa2/bookinfo/src/productpage/templates/productpage.html", "w+")
+  aux=open("practica_creativa2/bookinfo/src/productpage/templates/auxiliar.html", "r")
+  for line in aux:
+    h.write(line)
 
 #------------------------------------------------------MAIN---------------------------------------------------
 def funcion(): 
